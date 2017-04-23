@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TabsPage } from '../tabs/tabs';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -15,10 +16,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class Login {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.navCtrl = navCtrl;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Login');
+  }
+
+   Login(email: string ) { 
+      console.log(email);
+      this.navCtrl.push(TabsPage);
   }
 
 }
