@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { TabsPage } from '../tabs/tabs';
+import { HomePage } from '../home/home';
+import { AboutPage } from '../about/about';
+
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -30,5 +33,4 @@ export class Login {
         item : email
       });
   }
-
 }
