@@ -24,8 +24,11 @@ export class Login {
   }
 
    Login(email: string ) { 
-      console.log(email);
-      this.navCtrl.push(TabsPage);
+      //console.log(email);
+      //this.navCtrl.push(TabsPage);
+      this.navCtrl.push(TabsPage, {
+        item : email
+      });
   }
 
 }
