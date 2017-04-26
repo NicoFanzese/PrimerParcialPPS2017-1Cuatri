@@ -24,17 +24,20 @@
     <table border="2px" width="100%">
       <tr>
         <td width="30%">
-           <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/uno.jpg" type=image  id="unoUno" width ="100%" height ="100%" (click)="pasarApregunta2(this)">
+           <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/uno.jpg" type=image  name="unoUno" id="unoUno" 
+                    [(ngModel)]="unoUno" width ="100%" height ="100%" (click)="pasarApregunta2('unoUno')">
             <br>
            <small>15 de junio de 2013</small> 
         </td>      
         <td width="30%">
-            <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/dos.jpg" type=image id="dosUno" width ="100%" height ="100%" (click)="pasarApregunta2(this)">
+            <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/dos.jpg" type=image name="dosUno" id="dosUno" 
+            [(ngModel)]="dosUno" width ="100%" height ="100%" (click)="pasarApregunta2('dosUno')">
             <br>
             <small>25 de Enero de 2014</small>     
         </td>
         <td width="30%">
-            <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/tres.jpg" type=image id="tresUno" width ="100%" height ="100%" (click)="pasarApregunta2(this)">
+            <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/tres.jpg" type=image name="tresUno" id="tresUno" 
+            [(ngModel)]="tresUno" width ="100%" height ="100%" (click)="pasarApregunta2('tresUno')">
             <br>
             <small>8 de Agosto de 2013</small>     
         </td>
@@ -51,17 +54,17 @@
     <table border="2px" width="100%">
       <tr>
         <td width="30%">
-           <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/uno.jpg" type=image  id="unoUno" width ="100%" height ="100%" (click)="pasarApregunta3(this)">
+           <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/uno.jpg" type=image  id="unoDos" width ="100%" height ="100%" (click)="pasarApregunta3('unoDos')">
             <br>
            <small>Independiente</small> 
         </td>      
         <td width="30%">
-            <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/dos.jpg" type=image id="dosUno" width ="100%" height ="100%" (click)="pasarApregunta3(this)">
+            <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/dos.jpg" type=image id="dosDos" width ="100%" height ="100%" (click)="pasarApregunta3('dosDos')">
             <br>
             <small>River</small>     
         </td>
         <td width="30%">
-            <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/tres.jpg" type=image id="tresUno" width ="100%" height ="100%" (click)="pasarApregunta3(this)">
+            <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/tres.jpg" type=image id="tresDos" width ="100%" height ="100%" (click)="pasarApregunta3('tresDos')">
             <br>
             <small>Racing</small>     
         </td>
@@ -78,17 +81,17 @@
     <table border="2px" width="100%">
       <tr>
         <td width="30%">
-           <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/uno.jpg" type=image  id="unoUno" width ="100%" height ="100%" (click)="finalizar(this)">
+           <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/uno.jpg" type=image  id="unoTres" width ="100%" height ="100%" (click)="finalizar('unoTres')">
             <br>
            <small>"La Gata" fernandez</small> 
         </td>      
         <td width="30%">
-            <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/dos.jpg" type=image id="dosUno" width ="100%" height ="100%" (click)="finalizar(this)">
+            <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/dos.jpg" type=image id="dosTres" width ="100%" height ="100%" (click)="finalizar('dosTres')">
             <br>
             <small>"El muñeco" Gallardo</small>     
         </td>
         <td width="30%">
-            <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/tres.jpg" type=image id="tresUno" width ="100%" height ="100%" (click)="finalizar(this)">
+            <input src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/tres.jpg" type=image id="tresTres" width ="100%" height ="100%" (click)="finalizar('tresTres')">
             <br>
             <small>"El Caco" Centurión</small>     
         </td>
@@ -103,7 +106,7 @@
       <tr>
         <td width="80%">
           <h2>Resultado</h2>          
-          <label id="Resultado"></label>
+          <label id="ResultadoRespuestas"></label>
           <br>  
           <h2>Total de preguntas acertadas</h2>          
           <label id="Total"></label>
