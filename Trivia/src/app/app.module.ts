@@ -13,6 +13,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import {Servicio} from '../providers/servicio';
+import {AngularFireModule} from 'angularFire2';
+
+
+export const firebaseConfig = {
+    apiKey: "AIzaSyDvX-vJu5H2-BRXlu6ZRy2PAJpeKVDyAxU",
+    authDomain: "triviautn.firebaseapp.com",
+    databaseURL: "https://triviautn.firebaseio.com",
+    projectId: "triviautn",
+    storageBucket: "triviautn.appspot.com",
+    messagingSenderId: "547111251599"
+};
 
 @NgModule({
   declarations: [
@@ -25,6 +36,7 @@ import {Servicio} from '../providers/servicio';
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

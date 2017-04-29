@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 //var email = "";
+import {Servicio} from '../../providers/servicio';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class HomePage {
   private resumen= "";
   private acierto = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public usuario:Servicio) {
     //console.log("estoy en home" + this.navParams.get('item'));
   }
 
@@ -73,6 +74,10 @@ export class HomePage {
     this.acierto = 0;
     document.getElementById('Resultado').style.display='none'; 
     document.getElementById('Menu').style.display='inline';
+  }
+
+  guardar(){
+    this.usuario.save(this.usuario.tomarUsuario(),this.resumen, (this.acierto + " / 3"));
   }
 
   verUltimosResultados() { 
