@@ -12,8 +12,8 @@ export class HomePage {
   private resumen= "";
   private acierto = 0;
 
-  constructor(public navCtrl: NavController) {
-    
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    //console.log("estoy en home" + this.navParams.get('item'));
   }
 
   comenzarTrivia() { 

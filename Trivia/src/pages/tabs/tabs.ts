@@ -6,21 +6,35 @@ import { AboutPage } from '../about/about';
 //import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 
-var email = "";
+import {Servicio} from '../../providers/servicio';
 
 @Component({
   templateUrl: 'tabs.html'
 })
 
+
+
 export class TabsPage {
+  
+  public email = "";
 
   tab1Root = HomePage;
   tab2Root = AboutPage;
   //tab3Root = ContactPage;
 
-  constructor(public navParams: NavParams) {
-    console.log(this.navParams.get('item'));
-    email = this.navParams.get('item'); 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public usuario:Servicio) {
+    this.navCtrl = navCtrl;
+    /*console.log("estoy en tabs:" + this.navParams.get('item'));
+    email = this.navParams.get('item'); */
+    this.email = usuario.tomarUsuario();
+    console.log("esto es el servicio papá "+ this.email);
   }
+
+   /*PasarEmailPregunta1() { 
+     console.log("paso");
+      this.navCtrl.push(HomePage, {
+        item : email
+      });
+   }*/
 }
 

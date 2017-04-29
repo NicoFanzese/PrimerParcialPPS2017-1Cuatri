@@ -5,6 +5,8 @@ import { AboutPage } from '../about/about';
 
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import {Servicio} from '../../providers/servicio';
+
 /**
  * Generated class for the Login page.
  *
@@ -18,7 +20,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class Login {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public usuario: Servicio) {
     this.navCtrl = navCtrl;
   }
 
@@ -29,8 +31,12 @@ export class Login {
    Login(email: string ) { 
       //console.log(email);
       //this.navCtrl.push(TabsPage);
-      this.navCtrl.push(TabsPage, {
+      this.usuario.guardarUsuario(email);
+
+      this.navCtrl.push(TabsPage);
+
+      /*this.navCtrl.push(TabsPage, {
         item : email
-      });
-  }
+      });*/
+    }
 }
