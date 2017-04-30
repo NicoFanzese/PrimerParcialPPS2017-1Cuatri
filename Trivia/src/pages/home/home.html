@@ -4,13 +4,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding>  
   <div id="Menu">
     <button ion-button class="submit-btn" full (click)="comenzarTrivia()"> Comenzar Trivia
       <!--<img src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/pelota transparente.png" width="261" height="35" alt="">-->
     </button>
 
-    <button ion-button class="submit-btn" full> Ver últimos Juegos
+    <button ion-button class="submit-btn" full (click)="verUltimosResultados()"> Ver últimos Juegos
       <!--<img src="http://www.desarrolloweb.com/images/logo_desarrollo_web.gif" width="261" height="35" alt="">-->
     </button>
   </div>
@@ -128,9 +128,23 @@
   </div>
 
   <div id="UltimosResultados" style="display:none">
+    <ion-item>
+      <ion-input name="usuarioLogueado" id="usuarioLogueado" [(ngModel)]="usuarioLogueado" disabled></ion-input>
+    </ion-item>
+
     <br>
-    <br>       
-    
+      <div *ngFor="let puntaje of puntajesTraidos">        
+        <div *ngIf="puntaje.Usuario == usuarioLogueado" style="text-align: center">          
+              <b>{{puntaje.pregunta1}}</b>  {{puntaje.respuesta1}} <br>
+              <b>{{puntaje.pregunta2}}</b> {{puntaje.respuesta2}} <br>
+              <b>{{puntaje.pregunta3}}</b> {{puntaje.respuesta3}} <br>
+              <br>
+              Puntaje:  {{puntaje.Puntaje}}
+        <br>
+        </div>
+      </div>  
+    <br> 
+    <button ion-button class="submit-btn" full (click)="jugar()"> Menú Principal</button>
   </div>
 
 </ion-content>

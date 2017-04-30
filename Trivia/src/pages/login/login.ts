@@ -32,7 +32,6 @@ export class Login {
       //console.log(email);
       //this.navCtrl.push(TabsPage);
       this.usuario.guardarUsuario(email);
-
       this.navCtrl.push(TabsPage);
 
       /*this.navCtrl.push(TabsPage, {

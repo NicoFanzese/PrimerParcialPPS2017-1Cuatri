@@ -10,7 +10,6 @@ import {AngularFire, FirebaseListObservable} from 'angularFire2';
 */
 @Injectable()
 export class Servicio {
-  
   puntajes: FirebaseListObservable<any>;
 
   constructor(af: AngularFire) {
@@ -25,10 +24,17 @@ export class Servicio {
     return localStorage.getItem("Nombre");
   }
     
-  save(Usu:string, Res: string, pun: string) {
+  save(Usu:string, Res: string, pun: string, pre1: string, pre2: string, pre3: string, res1: string, res2: string, res3: string) {
     this.puntajes.push({ Usuario: Usu,
                         Respuestas: Res,
-                        Puntaje: pun});
+                        Puntaje: pun,
+                        pregunta1: pre1,
+                        pregunta2: pre2,
+                        pregunta3: pre3,
+                        respuesta1: res1,
+                        respuesta2: res2,
+                        respuesta3: res3});
   }
 
 }
+
