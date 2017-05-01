@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 //import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import {AngularFire, FirebaseListObservable} from 'angularFire2';
 
 /*
   Generated class for the Servicio provider.
@@ -10,8 +11,10 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class Servicio {
+  juegos: FirebaseListObservable<any>;
 
-  constructor() {
+  constructor(af: AngularFire) {
+    this.juegos = af.database.list('/juegos');
     //console.log('Hello Servicio Provider');
   }
 
@@ -21,6 +24,14 @@ export class Servicio {
 
   public tomarUsuario = function(){    
     return localStorage.getItem("Nombre");
+  }
+
+  save(Usu:string, respuestaComputador: string, respuestaPersona: string, Resultado: string, fecha: Date) {
+    this.juegos.push({ Usuario: Usu,
+                        RespuestaComputador: respuestaComputador,
+                        RespuestaPersona: respuestaPersona,
+                        Resultado: Resultado,
+                        Fecha: fecha});
   }
 
 }

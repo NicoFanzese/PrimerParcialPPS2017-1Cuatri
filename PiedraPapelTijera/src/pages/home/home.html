@@ -63,12 +63,29 @@
         </td>      
       </tr>
     </table>
+    <br>
+    <button ion-button class="submit-btn" full (click)="jugar()"> Menú Principal</button>
   </div>
 
   <div id="UltimosResultados" style="display:none">
     <ion-item>
       <ion-input name="usuarioLogueado" id="usuarioLogueado" [(ngModel)]="usuarioLogueado" disabled></ion-input>
     </ion-item>
+
+    <ion-select [(ngModel)]="resultado" id="resultado" name="resultado" (ngModelChange)="filtrarResultados()">
+      <ion-option value="Gana">Gana</ion-option>
+      <ion-option value="Pierde">Pierde</ion-option>
+      <ion-option value="Empate">Empate</ion-option>
+    </ion-select>
+
+    <div *ngFor="let juego of juegosTraidos">        
+        <div *ngIf="((juego.Usuario == usuarioLogueado) && (juego.Resultado == resultado))" style="text-align: center">          
+              <b>Computador: </b> {{juego.RespuestaComputador}} <b> Usuario:</b> {{juego.RespuestaPersona}} <b>Resultado:</b>   {{juego.Resultado}} <b>Fecha:</b> {{juego.Fecha}}<br>
+              <br>
+        </div>
+      </div> 
+
+
 
     <button ion-button class="submit-btn" full (click)="jugar()"> Menú Principal</button>
   </div>
