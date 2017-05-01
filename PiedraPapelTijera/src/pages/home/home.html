@@ -1,17 +1,76 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Piedra, Papel y Tijera</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+   <div id="Menu">
+    <button ion-button class="submit-btn" full (click)="comenzar()"> Comenzar Juego
+      <!--<img src="ftp://ftp.nfranzeseutn.hol.es/Imagenes/pelota transparente.png" width="261" height="35" alt="">-->
+    </button>
+
+    <button ion-button class="submit-btn" full (click)="verUltimosResultados()"> Ver últimos Juegos
+      <!--<img src="http://www.desarrolloweb.com/images/logo_desarrollo_web.gif" width="261" height="35" alt="">-->
+    </button>
+  </div>
+
+  <div id="PiedraPapelTijera" style="display:none">
+    <br>
+     <ion-item>
+      <ion-input style="text-align: center" value="Operador" disabled></ion-input>
+    </ion-item>
+    <table border="2px" width="100%">      
+        <tr>  
+          <td width="30%">
+           <input src="assets/piedra.jpg" type=image  name="piedraOperador" id="piedraOperador" 
+                    [(ngModel)]="piedraOperador" width ="100%" height ="120px" style="display:none">
+            <br>
+        </td>      
+        <td width="30%">
+            <input src="assets/papel.jpg" type=image name="papelOperador" id="papelOperador" 
+            [(ngModel)]="papelOperador" width ="100%" height ="120px" style="display:none">
+            <br>  
+        </td>
+        <td width="30%">
+            <input src="assets/tijera.png" type=image name="tijeraOperador" id="tijeraOperador" 
+            [(ngModel)]="tijeraOperador" width ="100%" height ="120px" style="display:none">
+            <br>   
+        </td>      
+      </tr>  
+    </table>
+    <br>
+    <ion-item>
+      <ion-input style="text-align: center" value="Persona" disabled></ion-input>
+    </ion-item>
+
+    <table border="2px" width="100%">      
+      <tr>  
+          <td width="30%">
+           <input src="assets/piedra.jpg" type=image  name="piedraPersona" id="piedraPersona" 
+                    [(ngModel)]="piedraPersona" width ="100%" height ="120px" (click)="generar('piedra')">
+            <br>
+        </td>      
+        <td width="30%">
+            <input src="assets/papel.jpg" type=image name="papelPersona" id="papelPersona" 
+            [(ngModel)]="papelPersona" width ="100%" height ="120px" (click)="generar('papel')">
+            <br>  
+        </td>
+        <td width="30%">
+            <input src="assets/tijera.png" type=image name="tijeraPersona" id="tijeraPersona" 
+            [(ngModel)]="tijeraPersona" width ="100%" height ="120px" (click)="generar('tijera')">
+            <br>   
+        </td>      
+      </tr>
+    </table>
+  </div>
+
+  <div id="UltimosResultados" style="display:none">
+    <ion-item>
+      <ion-input name="usuarioLogueado" id="usuarioLogueado" [(ngModel)]="usuarioLogueado" disabled></ion-input>
+    </ion-item>
+
+    <button ion-button class="submit-btn" full (click)="jugar()"> Menú Principal</button>
+  </div>
+
 </ion-content>

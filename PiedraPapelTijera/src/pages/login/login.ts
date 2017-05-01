@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
+import { HomePage } from '../home/home';
+import { AboutPage } from '../about/about';
 import {Servicio} from '../../providers/servicio';
 
 /**
@@ -17,6 +19,7 @@ import {Servicio} from '../../providers/servicio';
 export class Login {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public usuario: Servicio) {
+    this.navCtrl = navCtrl;
   }
 
   ionViewDidLoad() {
