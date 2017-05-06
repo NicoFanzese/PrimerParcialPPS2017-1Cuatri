@@ -23,18 +23,22 @@ export class HomePage {
   vaca(){
     this.nativeAudio.play('Vaca');
     this.vibration.vibrate([1000]);
+    console.log("entro");
   }
   grillo(){
-    this.nativeAudio.play('Vaca');
+    this.nativeAudio.play('Grillo');
     this.vibration.vibrate([1000]);
+    console.log("entro");
   }
   cardenal(){
     this.nativeAudio.play('Cardenal');
     this.vibration.vibrate([1000]);
+    console.log("entro");
   }
   oveja(){
     this.nativeAudio.play('Oveja');
     this.vibration.vibrate([1000]);
+    console.log("entro");
   }
 
 }
